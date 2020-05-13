@@ -1,0 +1,45 @@
+.contact {
+    background-image: url("/img/calgary_lake.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    display: flex;
+    padding : 3rem 3rem;
+    position: relative;
+    text-align: center;
+    margin-top: 3rem;
+}
+.contact-form{
+    padding: 0 2rem;
+}
+.contact-box {
+    font-family: 'Roboto', sans-serif;
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    margin: 2rem auto;
+}
+.contact-box h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    color: rgb(2, 2, 2);
+    padding: 2rem;
+    margin: 0;
+}
+.contact-box label {
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+    margin: 0;
+}
+.contact-box input {
+    display: inline-block;
+    padding: 0 2rem 1rem 2rem;
+    width: 400px;
+}
+.contact-btn {
+    width: 200px;
+    background-color: rgb(66, 65, 65);
+    padding: 0 0.5rem;
+    color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
