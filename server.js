@@ -6,13 +6,15 @@ const morgan = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
 
+//load the environment variable files 
+require('dotenv').config({path:"./config/keys.env"}); 
+
 
 const app = express();
 require('./public/js/database')
 require('./public/js/local-auth');
 
-app.use(express.static('public'));
-
+//Handlebars middleware
 app.engine('handlebars', exphbs({
     defaultLayout: 'main',
     layoutsDir: path.join(__dirname, 'views/layouts'),
@@ -22,11 +24,15 @@ app.set('view engine', 'handlebars');
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
+app.use(express.static('public'));
 
+//load controllers
+const generalController = require("./controllers/general");
+const productController = require("./controllers/product");
 
-
-//load productModel
-const productModel = require("./models/product");
+//map each controller
+app.use("/", generalController);
+app.use("/product", productController);
 
 //middlewares
 app.use(morgan('dev'));
@@ -40,33 +46,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //routes
-
-
-//home route
-app.get("/",(req,res)=>{
-
-    res.render("general/index",{
-        tittle: "Home Page"
-    });
-});
-
-//about us route
-app.get("/about",(req,res)=>{ 
-    res.render("general/about",{ 
-        title: "About Us", 
-        description: "About to Joy BB" 
-    }) 
-});
-
-//show all products
-app.get("/find",(req,res)=>{ 
-    res.render("general/finding",{ 
-        title: "Find a Home", 
-        description: "Find a Home in JoyBB",
-        products: productModel.getAllProducts() 
-    }) 
-});
-
 //register route
 app.get("/register",(req,res)=>{ 
     res.render("general/register",{ 
@@ -105,8 +84,8 @@ app.get('/profile', (req, res, next) => {
 
 
 //sets up server
-app.set ('port', process.env.PORT || 5000);
+const PORT = process.env.PORT;
+app.listen(PORT,()=>{
 
-app.listen(app.get('port'), () => {
-    console.log('Web sever is up and running', app.get('port'));
+    console.log(`Web sever is up and running`);
 });

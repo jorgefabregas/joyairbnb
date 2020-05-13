@@ -10,8 +10,10 @@
   "author": "Jorge Fabregas",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.1.0",
     "bcrypt-nodejs": "0.0.3",
     "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^4.0.3",
     "express-session": "^1.17.1",
@@ -22,5 +24,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgefabregas/joyairbnb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jorgefabregas/joyairbnb/issues"
+  },
+  "homepage": "https://github.com/jorgefabregas/joyairbnb#readme"
 }

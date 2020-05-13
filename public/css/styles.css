@@ -246,6 +246,12 @@ footer li {
     line-height: 0.1rem;
     font-size: 1rem;
 }
+footer a {
+    color: white;
+    font-size: 0.7em;
+    line-height: 0.1rem;
+    font-size: 1rem;
+}
 .contact {
     text-align: right;
 }

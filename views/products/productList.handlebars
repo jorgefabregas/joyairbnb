@@ -1,0 +1,17 @@
+<h1 class="content_tittle">Find your stay</h1>
+<section class="main_finding">
+    {{#each products}}
+        
+        <div class="place-picture flexslider">
+
+            <h2>{{this.title}}</h2>
+
+            <h3>{{this.description}}</h3>
+
+            <p>{{this.details}}</p>
+
+            <p class="price"> {{this.price}}</p>
+            
+        </div>
+    {{/each}}
+</section>
