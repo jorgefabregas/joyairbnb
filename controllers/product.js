@@ -13,6 +13,14 @@ router.get("/list",(req,res)=>{
     }) 
 });
 
+router.get("/find",(req,res)=>{ 
+    res.render("general/finding",{ 
+        title: "Find a Home", 
+        description: "Find a Home in JoyBB",
+        products: productModel.getAllProducts()  
+    }) 
+});
+
 //show add product form
 router.get("/add",(req,res)=>{ 
     res.render("products/productAdd",{ 

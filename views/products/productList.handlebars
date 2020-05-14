@@ -4,14 +4,26 @@
         
         <div class="place-picture flexslider">
 
+            <img src="{{ this.img }}" alt="{{ this.title }}" class="product">
             <h2>{{this.title}}</h2>
+            <h3 class="prodtitle" id="prodtitle">{{ this.desc }}</h3>
+            <p>{{this.details}}</p>
+            <p class="price" id="prodprice">{{ this.price }}</p>
+
+
+            <!--<h2>{{this.title}}</h2>
 
             <h3>{{this.description}}</h3>
 
             <p>{{this.details}}</p>
 
-            <p class="price"> {{this.price}}</p>
+            <p class="price"> {{this.price}}</p>-->
             
         </div>
     {{/each}}
 </section>
+
+{{#each products }}
+    <article class="productsbox">
+    </article>
+{{/each}}

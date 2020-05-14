@@ -39,7 +39,7 @@ router.post("/contact-us", (req,res)=>{
     `,
     };
 
-    //Asynchornous operation (who don't know how long this will take to execute)
+//Asynchornous operation (who don't know how long this will take to execute)
     sgMail.send(msg)
     .then(()=>{
         res.redirect("/");
@@ -58,14 +58,7 @@ router.get("/about",(req,res)=>{
     }) 
 });
 
-//show all products
-router.get("/find",(req,res)=>{ 
-    res.render("general/finding",{ 
-        title: "Find a Home", 
-        description: "Find a Home in JoyBB",
-        products: productModel.getAllProducts() 
-    }) 
-});
+
 
 
 module.exports = router;
