@@ -7,7 +7,7 @@ const userModel = require("../models/user");
 //Route to direct use to Registration form
 router.get("/register",(req,res)=>
 {
-    res.render("User/register");
+    res.render("general/register");
 });
 
 //Route to process user's request and data when user submits registration form
@@ -25,8 +25,9 @@ router.post("/register",(req,res)=>
     const user = new userModel(newUser);
     user.save()
     .then(()=>{
-        res.redirect("/user/profile")
+        res.redirect("/User/profile")
     })
+    
     .catch(err=>console.log(`Error while inserting into the data ${err}`));
 
 });
@@ -46,10 +47,10 @@ router.post("/login",(req,res)=>
 
 
 
-router.get("/profile",(req,res)=>{
-
-    res.render("User/userDashboard");
-})
+router.get("/profile",(req,res)=>
+{
+    res.render("User/dashboard");
+});
 
 
 
